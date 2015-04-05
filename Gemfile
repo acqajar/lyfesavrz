@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'nested_form'
 
 gem 'paperclip', '~> 4.1'
 
