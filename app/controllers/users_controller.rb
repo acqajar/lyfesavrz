@@ -70,6 +70,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :gender, :address, :radius, :latitude, :longitude, :age, :bio)
+      params.require(:user).permit(:name, :gender, :address, :radius, :latitude, :longitude, :age, :bio, 
+        :photos_attributes => [:image])
     end
 end

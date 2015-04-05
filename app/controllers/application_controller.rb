@@ -11,5 +11,13 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource_or_scope)
   	new_user_registration_path(current_user)
   end
-  
+
+  def logged_in_user
+      unless logged_in?
+        store_location
+        flash[:danger] = "Please log in."
+        redirect_to new_user_registration_path(current_user)
+      end
+    end
+
 end

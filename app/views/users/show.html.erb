@@ -40,5 +40,23 @@
   <%= @user.bio %>
 </p>
 
+
+<% @user.photos.each do |p| %>
+  <%= image_tag p.image.url %>
+<% end %>
+<br>
+
+
+<div class="col-md-8">
+    <% if @user.posts.any? %>
+      <h3>Microposts (<%= @user.posts.count %>)</h3>
+      <ol class="posts">
+        <%= render @posts %>
+      </ol>
+      <%= will_paginate @posts %>
+    <% end %>
+  </div>
+
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
