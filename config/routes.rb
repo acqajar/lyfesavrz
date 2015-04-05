@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
+  resources :posts
+
   resources :photos
 
   devise_for :users
   resources :qualifications
-
-  resources :posts
 
   resources :users
 

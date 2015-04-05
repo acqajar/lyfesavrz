@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 	after_validation :geocode, :if => :address_changed?
 
 	has_many :posts, dependent: :destroy
-	has_many :photos
+	has_many :photos, dependent: :destroy
 	has_many :qualifications
 	accepts_nested_attributes_for :photos, :allow_destroy => true
 	has_attached_file :photo

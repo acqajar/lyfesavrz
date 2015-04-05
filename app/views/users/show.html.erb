@@ -1,9 +1,5 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p><%= @user.name %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
 
 <p>
   <strong>Gender:</strong>
@@ -47,6 +43,7 @@
 <br>
 
 
+
 <div class="col-md-8">
     <% if @user.posts.any? %>
       <h3>Microposts (<%= @user.posts.count %>)</h3>
@@ -56,6 +53,8 @@
       <%= will_paginate @posts %>
     <% end %>
   </div>
+
+
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

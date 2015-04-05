@@ -3,11 +3,11 @@
 one:
   content: MyText
   user_id: 
-  type: 
+  category: MyString
   rating: 1
 
 two:
   content: MyText
   user_id: 
-  type: 
+  category: MyString
   rating: 1
