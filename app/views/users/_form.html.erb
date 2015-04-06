@@ -53,7 +53,6 @@ true} do |f| %>
  <%= f.fields_for :photos do |builder| %>  
     <% if builder.object.new_record? %>
       <%= builder.file_field(:image) %>
-      
     <% end %>
   <% end %>
 
@@ -64,6 +63,7 @@ true} do |f| %>
 <% end %>
 
 
+  <%= render @users %>
 
   <div class="actions">
     <%= f.submit %>

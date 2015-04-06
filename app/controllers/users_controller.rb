@@ -1,16 +1,20 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update]
 
   # GET /users
   # GET /users.json
   def index
     @users = User.all
     @user = current_user
+    @users = User.paginate(page: params[:page])
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
+    @posts = @user.posts.paginate(page: params[:page])
   end
 
   # GET /users/new
@@ -72,5 +76,10 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :gender, :address, :radius, :latitude, :longitude, :age, :bio, 
         :photos_attributes => [:image])
+    end
+
+     def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless @user == current_user
     end
 end

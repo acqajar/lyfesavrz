@@ -1,5 +1,15 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap-sass', '~> 3.3.4'
+
+gem 'gravtastic'
+
+gem 'validates_email_format_of'
+
+gem 'will_paginate',           '3.0.7'
+
+gem 'bootstrap-will_paginate', '0.0.10'
+
 gem 'nested_form'
 
 gem 'paperclip', '~> 4.1'
